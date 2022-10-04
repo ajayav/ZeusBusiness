@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ZeusBusiness.View.Pages.Authentication.LoginPage"
+             Shell.NavBarIsVisible="False"
+             Title="LoginPage">
+    <VerticalStackLayout Padding="30,0"
+                         Spacing="25"
+                         VerticalOptions="Center">
+
+
+        <StackLayout Orientation="Horizontal">
+            <Frame HasShadow="True"
+                   BorderColor="White"
+                   HeightRequest="60"
+                   WidthRequest="60"
+                   CornerRadius="28">
+                <Image Source="email.svg"
+                       HeightRequest="20"
+                       WidthRequest="20" />
+            </Frame>
+            <Frame HeightRequest="45"
+                   Padding="0"
+                   HasShadow="True"
+                   BorderColor="White"
+                   HorizontalOptions="FillAndExpand"
+                   Margin="-20,0,0,0">
+                <Entry x:Name="emailTxt"
+                       VerticalOptions="Center"
+                       Placeholder="Username"
+                       Keyboard="Email"
+                       Margin="20,0,0,0" />
+            </Frame>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <Frame HasShadow="True"
+                   BorderColor="White"
+                   HeightRequest="60"
+                   WidthRequest="60"
+                   CornerRadius="28">
+                <Image Source="password.svg"
+                       HeightRequest="20"
+                       WidthRequest="20" />
+            </Frame>
+            <Frame HeightRequest="45"
+                   Padding="0"
+                   HasShadow="True"
+                   BorderColor="White"
+                   HorizontalOptions="FillAndExpand"
+                   Margin="-20,0,0,0">
+                <Entry x:Name="passwordTxt"
+                       VerticalOptions="Center"
+                       Placeholder="Password"
+                       IsPassword="True"
+                       Margin="20,0,0,0" />
+            </Frame>
+        </StackLayout>
+
+        <Button x:Name="loginBtn" Text="LOGIN" TextColor="White" BackgroundColor="#023463" WidthRequest="100" CornerRadius="20"/>
+
+    </VerticalStackLayout>
+</ContentPage>
