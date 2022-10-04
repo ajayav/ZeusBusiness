@@ -18,6 +18,10 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\ZeusBusiness.ViewModel\ZeusBusiness.ViewModel.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <MauiXaml Update="Pages\Authentication\LoginPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

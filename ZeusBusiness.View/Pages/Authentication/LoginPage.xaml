@@ -57,7 +57,7 @@
             </Frame>
         </StackLayout>
 
-        <Button x:Name="loginBtn" Text="LOGIN" TextColor="White" BackgroundColor="#023463" WidthRequest="100" CornerRadius="20"/>
+        <Button x:Name="loginBtn" Text="LOGIN" TextColor="White" BackgroundColor="#023463" WidthRequest="100" CornerRadius="20" Command="{Binding LoginCommand}"/>
 
     </VerticalStackLayout>
 </ContentPage>

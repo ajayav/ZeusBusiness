@@ -58,6 +58,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\ZeusBusiness.ViewModel\ZeusBusiness.ViewModel.csproj" />
 	  <ProjectReference Include="..\ZeusBusiness.View\ZeusBusiness.View.csproj" />
 	</ItemGroup>
 
