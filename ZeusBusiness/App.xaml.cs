@@ -4,8 +4,8 @@ namespace ZeusBusiness;
 
 public partial class App : Application
 {
-	private IAuthenticationRoute _route;
-	public App(IAuthenticationRoute route)
+	private IApplicationRoute _route;
+	public App(IApplicationRoute route)
 	{
 		_route = route;
 		InitializeComponent();
