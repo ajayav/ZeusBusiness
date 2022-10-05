@@ -11,7 +11,7 @@
 
     <ShellContent Shell.NavBarIsVisible="False"
                   ContentTemplate="{DataTemplate login:LoginPage}"
-                  Route="LoginPage" />
+                  Route="LoginPage" Shell.FlyoutBehavior="Disabled" />
 
     <FlyoutItem Route="OwnerDashboardPage"
                 FlyoutDisplayOptions="AsMultipleItems">
@@ -39,7 +39,7 @@
     <Shell.FlyoutFooter>
         <StackLayout Padding="20">
             <Button Text="Logout" WidthRequest="200" BackgroundColor="#023463" 
-                    FontSize="15" CornerRadius="28"/>
+                    FontSize="15" CornerRadius="28" Command="{Binding LogoutCommand}"/>
         </StackLayout>
     </Shell.FlyoutFooter>
 

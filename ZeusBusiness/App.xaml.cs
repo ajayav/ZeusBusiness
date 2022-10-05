@@ -1,11 +1,15 @@
-﻿namespace ZeusBusiness;
+﻿using ZeusBusiness.Domain.Abstract.Route;
+
+namespace ZeusBusiness;
 
 public partial class App : Application
 {
-	public App()
+	private IAuthenticationRoute _route;
+	public App(IAuthenticationRoute route)
 	{
+		_route = route;
 		InitializeComponent();
 
-		MainPage = new AppShell();
+		MainPage = new AppShell(route);
 	}
 }

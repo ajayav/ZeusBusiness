@@ -6,9 +6,9 @@ namespace ZeusBusiness.ViewModel.ViewBinder.Authentication
 {
     public partial class LoginPageViewModel : BaseViewModel
     {
-        private IDashboardRoute _route;
+        private IApplicationRoute _route;
 
-        public LoginPageViewModel(IDashboardRoute route)
+        public LoginPageViewModel(IApplicationRoute route)
         {
             _route = route;
         }
@@ -17,7 +17,7 @@ namespace ZeusBusiness.ViewModel.ViewBinder.Authentication
         [RelayCommand]
          void Login()
         {
-             _route.RouteToDashboard();
+             _route.RouteToOwnerDashboard();
         }
         #endregion
     }

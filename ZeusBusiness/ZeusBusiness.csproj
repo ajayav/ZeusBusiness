@@ -64,8 +64,8 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\ZeusBusiness.Domain.Abstract\ZeusBusiness.Domain.Abstract.csproj" />
+	  <ProjectReference Include="..\ZeusBusiness.Domain\ZeusBusiness.Domain.csproj" />
 	  <ProjectReference Include="..\ZeusBusiness.Model\ZeusBusiness.Model.csproj" />
-	  <ProjectReference Include="..\ZeusBusiness.Route\ZeusBusiness.Route.csproj" />
 	  <ProjectReference Include="..\ZeusBusiness.ViewModel\ZeusBusiness.ViewModel.csproj" />
 	  <ProjectReference Include="..\ZeusBusiness.View\ZeusBusiness.View.csproj" />
 	</ItemGroup>

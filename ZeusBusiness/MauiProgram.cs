@@ -1,9 +1,11 @@
 ﻿using CommunityToolkit.Maui;
 using ZeusBusiness.Domain.Abstract.Route;
+using ZeusBusiness.Domain.Route;
 using ZeusBusiness.Route.Navigation.Authentication;
 using ZeusBusiness.Route.Navigation.Dashboard;
 using ZeusBusiness.View.Pages.Authentication;
 using ZeusBusiness.View.Pages.Dashboard;
+using ZeusBusiness.ViewModel.ViewBinder;
 using ZeusBusiness.ViewModel.ViewBinder.Authentication;
 using ZeusBusiness.ViewModel.ViewBinder.Dashboard;
 
@@ -30,11 +32,13 @@ public static class MauiProgram
 		//View-Models
 		builder.Services.AddSingleton<LoginPageViewModel>();
 		builder.Services.AddSingleton<OwnerDashboardViewModel>();
+		builder.Services.AddSingleton<AppShellViewModel>();
 
 
 		//Routing
-		builder.Services.AddSingleton<IDashboardRoute, DashboardRoute>();
-		builder.Services.AddSingleton<IAuthenticationRoute, AuthenticationRoute>();
+		//builder.Services.AddSingleton<IDashboardRoute, DashboardRoute>();
+		//builder.Services.AddSingleton<IAuthenticationRoute, AuthenticationRoute>();
+		builder.Services.AddSingleton<IApplicationRoute, ApplicationRoute>();
 
 
 		return builder.Build();
