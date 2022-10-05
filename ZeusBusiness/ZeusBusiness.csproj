@@ -49,8 +49,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\crm.svg" />
+	  <None Remove="Resources\Images\dashboard.svg" />
 	  <None Remove="Resources\Images\email.svg" />
+	  <None Remove="Resources\Images\inventory.svg" />
 	  <None Remove="Resources\Images\password.svg" />
+	  <None Remove="Resources\Images\report.svg" />
+	  <None Remove="Resources\Images\settings.svg" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -58,6 +63,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\ZeusBusiness.Domain.Abstract\ZeusBusiness.Domain.Abstract.csproj" />
+	  <ProjectReference Include="..\ZeusBusiness.Model\ZeusBusiness.Model.csproj" />
+	  <ProjectReference Include="..\ZeusBusiness.Route\ZeusBusiness.Route.csproj" />
 	  <ProjectReference Include="..\ZeusBusiness.ViewModel\ZeusBusiness.ViewModel.csproj" />
 	  <ProjectReference Include="..\ZeusBusiness.View\ZeusBusiness.View.csproj" />
 	</ItemGroup>

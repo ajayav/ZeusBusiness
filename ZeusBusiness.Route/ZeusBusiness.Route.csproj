@@ -18,7 +18,8 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0" />
+	  <ProjectReference Include="..\ZeusBusiness.Domain.Abstract\ZeusBusiness.Domain.Abstract.csproj" />
+	  <ProjectReference Include="..\ZeusBusiness.View\ZeusBusiness.View.csproj" />
 	</ItemGroup>
 
 </Project>

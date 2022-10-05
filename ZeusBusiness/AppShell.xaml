@@ -1,14 +1,46 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<Shell
-    x:Class="ZeusBusiness.AppShell"
-    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:ZeusBusiness"
-    xmlns:login ="clr-namespace:ZeusBusiness.View.Pages.Authentication;assembly=ZeusBusiness.View"
-    Shell.FlyoutBehavior="Disabled">
+<Shell x:Class="ZeusBusiness.AppShell"
+       xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:ZeusBusiness"
+       xmlns:login="clr-namespace:ZeusBusiness.View.Pages.Authentication;assembly=ZeusBusiness.View"
+       xmlns:ownerDashboard="clr-namespace:ZeusBusiness.View.Pages.Dashboard;assembly=ZeusBusiness.View"
+       xmlns:icons ="clr-namespace:ZeusBusiness.Model.Icons;assembly=ZeusBusiness.Model"
+       Shell.TabBarIsVisible="False"
+>
 
     <ShellContent Shell.NavBarIsVisible="False"
-        ContentTemplate="{DataTemplate login:LoginPage}"
-        Route="LoginPage" />
+                  ContentTemplate="{DataTemplate login:LoginPage}"
+                  Route="LoginPage" />
+
+    <FlyoutItem Route="OwnerDashboardPage"
+                FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Title="Dashboard"
+                      Icon="{x:Static icons:AppDrawer.Dashboard}"
+                      ContentTemplate="{DataTemplate ownerDashboard:OwnerDashboardPage}" />
+
+        <ShellContent Title="Inventory"
+                      Icon="{x:Static icons:AppDrawer.Inventory}"
+                      ContentTemplate="{DataTemplate ownerDashboard:OwnerDashboardPage}" />
+
+        <ShellContent Title="Report"
+                      Icon="{x:Static icons:AppDrawer.Report}"
+                      ContentTemplate="{DataTemplate ownerDashboard:OwnerDashboardPage}" />
+
+        <ShellContent Title="Crm"
+                      Icon="{x:Static icons:AppDrawer.Crm}"
+                      ContentTemplate="{DataTemplate ownerDashboard:OwnerDashboardPage}" />
+
+        <ShellContent Title="Settings"
+                      Icon="{x:Static icons:AppDrawer.Setting}"
+                      ContentTemplate="{DataTemplate ownerDashboard:OwnerDashboardPage}" />
+    </FlyoutItem>
+
+    <Shell.FlyoutFooter>
+        <StackLayout Padding="20">
+            <Button Text="Logout" WidthRequest="200" BackgroundColor="#023463" 
+                    FontSize="15" CornerRadius="28"/>
+        </StackLayout>
+    </Shell.FlyoutFooter>
 
 </Shell>

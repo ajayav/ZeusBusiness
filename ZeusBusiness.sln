@@ -23,7 +23,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03-Domain", "03-Domain", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04-DataAccess", "04-DataAccess", "{99841319-A491-4113-BEBE-E1D73741CFEC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZeusBusiness.ViewModel", "ZeusBusiness.ViewModel\ZeusBusiness.ViewModel.csproj", "{C4358297-90A0-4FAA-8882-72490284A39F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZeusBusiness.ViewModel", "ZeusBusiness.ViewModel\ZeusBusiness.ViewModel.csproj", "{C4358297-90A0-4FAA-8882-72490284A39F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZeusBusiness.Route", "ZeusBusiness.Route\ZeusBusiness.Route.csproj", "{807244B3-A3A2-4ABC-A5A5-16C6E5EEB859}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,6 +63,10 @@ Global
 		{C4358297-90A0-4FAA-8882-72490284A39F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4358297-90A0-4FAA-8882-72490284A39F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4358297-90A0-4FAA-8882-72490284A39F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{807244B3-A3A2-4ABC-A5A5-16C6E5EEB859}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{807244B3-A3A2-4ABC-A5A5-16C6E5EEB859}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{807244B3-A3A2-4ABC-A5A5-16C6E5EEB859}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{807244B3-A3A2-4ABC-A5A5-16C6E5EEB859}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

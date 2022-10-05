@@ -22,7 +22,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Pages\Dashboard\OwnerDashboardPage.xaml.cs">
+	    <DependentUpon>OwnerDashboardPage.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
 	  <MauiXaml Update="Pages\Authentication\LoginPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\Dashboard\OwnerDashboardPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
