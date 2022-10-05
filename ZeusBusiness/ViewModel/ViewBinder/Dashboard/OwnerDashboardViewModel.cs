@@ -4,7 +4,7 @@
     {
         public OwnerDashboardViewModel()
         {
-            Title = "Its AJ";
+           
         }
     }
 }

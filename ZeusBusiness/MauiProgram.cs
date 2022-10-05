@@ -1,6 +1,4 @@
 ﻿using CommunityToolkit.Maui;
-using ZeusBusiness.Domain.Abstract.Route;
-using ZeusBusiness.Domain.Route;
 using ZeusBusiness.View.Pages.Authentication;
 using ZeusBusiness.View.Pages.Dashboard;
 using ZeusBusiness.ViewModel.ViewBinder;
@@ -36,8 +34,6 @@ public static class MauiProgram
 		//Routing
 		//builder.Services.AddSingleton<IDashboardRoute, DashboardRoute>();
 		//builder.Services.AddSingleton<IAuthenticationRoute, AuthenticationRoute>();
-		builder.Services.AddSingleton<IApplicationRoute, ApplicationRoute>();
-
 
 		return builder.Build();
 	}

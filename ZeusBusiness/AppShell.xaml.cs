@@ -1,17 +1,15 @@
-﻿using ZeusBusiness.Domain.Abstract.Route;
-using ZeusBusiness.View.Pages.Dashboard;
+﻿using ZeusBusiness.View.Pages.Dashboard;
 using ZeusBusiness.ViewModel.ViewBinder;
 
 namespace ZeusBusiness;
 
 public partial class AppShell : Shell
 {
-	private IApplicationRoute _route;
-	public AppShell(IApplicationRoute route)
+	public AppShell()
 	{
-		_route = route;
+
 		InitializeComponent();
-		this.BindingContext = new AppShellViewModel(route);
+		this.BindingContext = new AppShellViewModel();
 		Routing.RegisterRoute(nameof(OwnerDashboardPage), typeof(OwnerDashboardPage));
 	}
 }

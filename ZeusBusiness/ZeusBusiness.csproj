@@ -60,14 +60,30 @@
 
 	<ItemGroup>
 	  <PackageReference Include="CommunityToolkit.Maui" Version="1.3.0" />
+	  <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <ProjectReference Include="..\ZeusBusiness.Domain.Abstract\ZeusBusiness.Domain.Abstract.csproj" />
 	  <ProjectReference Include="..\ZeusBusiness.Domain\ZeusBusiness.Domain.csproj" />
-	  <ProjectReference Include="..\ZeusBusiness.Model\ZeusBusiness.Model.csproj" />
-	  <ProjectReference Include="..\ZeusBusiness.ViewModel\ZeusBusiness.ViewModel.csproj" />
-	  <ProjectReference Include="..\ZeusBusiness.View\ZeusBusiness.View.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="View\Pages\Authentication\LoginPage.xaml.cs">
+	    <DependentUpon>%(Filename)</DependentUpon>
+	  </Compile>
+	  <Compile Update="View\Pages\Dashboard\OwnerDashboardPage.xaml.cs">
+	    <DependentUpon>%(Filename)</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="View\Pages\Authentication\LoginPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\Pages\Dashboard\OwnerDashboardPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 
 </Project>

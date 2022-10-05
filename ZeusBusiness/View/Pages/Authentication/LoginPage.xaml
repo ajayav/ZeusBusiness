@@ -29,7 +29,8 @@
                        VerticalOptions="Center"
                        Placeholder="Username"
                        Keyboard="Email"
-                       Margin="20,0,0,0" />
+                       Margin="20,0,0,0" 
+                       Text="{Binding Email}"/>
             </Frame>
         </StackLayout>
 
@@ -53,7 +54,8 @@
                        VerticalOptions="Center"
                        Placeholder="Password"
                        IsPassword="True"
-                       Margin="20,0,0,0" />
+                       Margin="20,0,0,0" 
+                       Text="{Binding Password}"/>
             </Frame>
         </StackLayout>
 
