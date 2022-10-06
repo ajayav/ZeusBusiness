@@ -12,10 +12,10 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 
 		<!-- Display name -->
-		<ApplicationTitle>ZeusBusiness</ApplicationTitle>
+		<ApplicationTitle>Zeus Business</ApplicationTitle>
 
 		<!-- App Identifier -->
-		<ApplicationId>com.companyname.zeusbusiness</ApplicationId>
+		<ApplicationId>com.zeusbusiness.app</ApplicationId>
 		<ApplicationIdGuid>FF79B45D-9337-43C2-BB57-07D4F19C0CE0</ApplicationIdGuid>
 
 		<!-- Versions -->
@@ -56,16 +56,13 @@
 	  <None Remove="Resources\Images\password.svg" />
 	  <None Remove="Resources\Images\report.svg" />
 	  <None Remove="Resources\Images\settings.svg" />
+	  <None Remove="Resources\Images\user.svg" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <PackageReference Include="CommunityToolkit.Maui" Version="1.3.0" />
 	  <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <ProjectReference Include="..\ZeusBusiness.Domain.Abstract\ZeusBusiness.Domain.Abstract.csproj" />
-	  <ProjectReference Include="..\ZeusBusiness.Domain\ZeusBusiness.Domain.csproj" />
+	  <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -78,6 +75,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Controls\AppDrawer\FlyoutHeaderControl.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\Helpers\LoadingPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="View\Pages\Authentication\LoginPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

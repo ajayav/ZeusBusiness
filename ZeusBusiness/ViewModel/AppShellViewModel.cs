@@ -8,6 +8,10 @@ namespace ZeusBusiness.ViewModel.ViewBinder
         [RelayCommand]
         async void Logout()
         {
+            if (Preferences.ContainsKey(nameof(App.AuthResponse)))
+            {
+                Preferences.Remove(nameof(App.AuthResponse));
+            }
             await Shell.Current.GoToAsync($"//{nameof(LoginPage)}");
         }
     }

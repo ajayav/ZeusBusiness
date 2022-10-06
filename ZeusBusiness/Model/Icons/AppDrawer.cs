@@ -7,5 +7,6 @@
         public const string Report = "report.svg";
         public const string Crm = "crm.svg";
         public const string Setting = "settings.svg";
+        public const string User = "user.svg";
     }
 }

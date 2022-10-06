@@ -5,13 +5,21 @@
        xmlns:local="clr-namespace:ZeusBusiness"
        xmlns:auth="clr-namespace:ZeusBusiness.View.Pages.Authentication"
        xmlns:dashboard="clr-namespace:ZeusBusiness.View.Pages.Dashboard"
+       xmlns:startup="clr-namespace:ZeusBusiness.View.Helpers"
        xmlns:icons="clr-namespace:ZeusBusiness.Model.Icons"
-       Shell.TabBarIsVisible="False"
->
+       Shell.TabBarIsVisible="False">
 
+    <ShellContent 
+                  Shell.FlyoutBehavior="Disabled"
+                  ContentTemplate="{DataTemplate startup:LoadingPage}"
+                  Route="LoadingPage" 
+                  FlyoutItemIsVisible="False"/>
+    
     <ShellContent Shell.NavBarIsVisible="False"
                   ContentTemplate="{DataTemplate auth:LoginPage}"
-                  Route="LoginPage" Shell.FlyoutBehavior="Disabled" />
+                  Route="LoginPage"
+                  Shell.FlyoutBehavior="Disabled"
+                  FlyoutItemIsVisible="False"/>
 
     <FlyoutItem Route="OwnerDashboardPage"
                 FlyoutDisplayOptions="AsMultipleItems">
@@ -38,8 +46,12 @@
 
     <Shell.FlyoutFooter>
         <StackLayout Padding="20">
-            <Button Text="Logout" WidthRequest="200" BackgroundColor="#023463" 
-                    FontSize="15" CornerRadius="28" Command="{Binding LogoutCommand}"/>
+            <Button Text="Logout"
+                    WidthRequest="200"
+                    BackgroundColor="#023463"
+                    FontSize="15"
+                    CornerRadius="28"
+                    Command="{Binding LogoutCommand}" />
         </StackLayout>
     </Shell.FlyoutFooter>
 

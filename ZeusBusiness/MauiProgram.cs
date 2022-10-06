@@ -1,6 +1,8 @@
 ﻿using CommunityToolkit.Maui;
+using ZeusBusiness.View.Helpers;
 using ZeusBusiness.View.Pages.Authentication;
 using ZeusBusiness.View.Pages.Dashboard;
+using ZeusBusiness.ViewModel.Helpers;
 using ZeusBusiness.ViewModel.ViewBinder;
 using ZeusBusiness.ViewModel.ViewBinder.Authentication;
 using ZeusBusiness.ViewModel.ViewBinder.Dashboard;
@@ -24,11 +26,13 @@ public static class MauiProgram
 		//Views
 		builder.Services.AddSingleton<LoginPage>();
 		builder.Services.AddSingleton<OwnerDashboardPage>();
+		builder.Services.AddSingleton<LoadingPage>();
 
 		//View-Models
 		builder.Services.AddSingleton<LoginPageViewModel>();
 		builder.Services.AddSingleton<OwnerDashboardViewModel>();
 		builder.Services.AddSingleton<AppShellViewModel>();
+		builder.Services.AddSingleton<LoadingPageViewModel>();
 
 
 		//Routing
