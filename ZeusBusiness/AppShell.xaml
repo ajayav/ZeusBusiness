@@ -9,23 +9,24 @@
        xmlns:icons="clr-namespace:ZeusBusiness.Model.Icons"
        Shell.TabBarIsVisible="False">
 
-    <ShellContent 
-                  Shell.FlyoutBehavior="Disabled"
+    <ShellContent Shell.FlyoutBehavior="Disabled"
                   ContentTemplate="{DataTemplate startup:LoadingPage}"
-                  Route="LoadingPage" 
-                  FlyoutItemIsVisible="False"/>
-    
+                  Route="LoadingPage"
+                  FlyoutItemIsVisible="False" />
+
     <ShellContent Shell.NavBarIsVisible="False"
                   ContentTemplate="{DataTemplate auth:LoginPage}"
                   Route="LoginPage"
                   Shell.FlyoutBehavior="Disabled"
-                  FlyoutItemIsVisible="False"/>
+                  FlyoutItemIsVisible="False" />
 
-    <FlyoutItem Route="OwnerDashboardPage"
+
+    <ShellContent Title="Dashboard"
+                  Icon="{x:Static icons:AppDrawer.Dashboard}"
+                  ContentTemplate="{DataTemplate dashboard:OwnerDashboardPage}" />
+
+    <!--<FlyoutItem Route="OwnerDashboardPage"
                 FlyoutDisplayOptions="AsMultipleItems">
-        <ShellContent Title="Dashboard"
-                      Icon="{x:Static icons:AppDrawer.Dashboard}"
-                      ContentTemplate="{DataTemplate dashboard:OwnerDashboardPage}" />
 
         <ShellContent Title="Inventory"
                       Icon="{x:Static icons:AppDrawer.Inventory}"
@@ -42,7 +43,7 @@
         <ShellContent Title="Settings"
                       Icon="{x:Static icons:AppDrawer.Setting}"
                       ContentTemplate="{DataTemplate dashboard:OwnerDashboardPage}" />
-    </FlyoutItem>
+    </FlyoutItem>-->
 
     <Shell.FlyoutFooter>
         <StackLayout Padding="20">

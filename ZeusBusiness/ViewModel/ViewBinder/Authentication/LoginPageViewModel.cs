@@ -3,6 +3,8 @@ using CommunityToolkit.Mvvm.Input;
 using Newtonsoft.Json;
 using System.Text.Json.Serialization;
 using ZeusBusiness.Controls.AppDrawer;
+using ZeusBusiness.Dev;
+using ZeusBusiness.Infrastructure.PermissionChecker;
 using ZeusBusiness.Model.Generics.Authentication;
 using ZeusBusiness.View.Pages.Dashboard;
 
@@ -41,7 +43,14 @@ namespace ZeusBusiness.ViewModel.ViewBinder.Authentication
                 AppShell.Current.FlyoutHeader = new FlyoutHeaderControl();
                 Email = "";
                 Password = "";
-                await Shell.Current.GoToAsync($"//{nameof(OwnerDashboardPage)}");
+                string outletUserStr = Preferences.Get(nameof(App.OutletUser), "");
+                if (string.IsNullOrEmpty(outletUserStr))
+                {
+                    var outletUser = await FakeOutletUser.FetchOutletUser();
+                    App.OutletUser = outletUser;
+                }
+                await OutletPermissionChecker.AddFlyoutItems();
+                //await Shell.Current.GoToAsync($"//{nameof(OwnerDashboardPage)}");
             }
         }
         #endregion
