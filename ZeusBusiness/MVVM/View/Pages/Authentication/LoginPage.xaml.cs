@@ -1,6 +1,6 @@
-using ZeusBusiness.ViewModel.ViewBinder.Authentication;
+using ZeusBusiness.MVVM.ViewModel.ViewBinder.Authentication;
 
-namespace ZeusBusiness.View.Pages.Authentication;
+namespace ZeusBusiness.MVVM.View.Pages.Authentication;
 
 public partial class LoginPage : ContentPage
 {

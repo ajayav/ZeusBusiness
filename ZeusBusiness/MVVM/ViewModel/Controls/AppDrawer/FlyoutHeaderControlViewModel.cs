@@ -3,7 +3,8 @@ using Newtonsoft.Json;
 using System.Collections.ObjectModel;
 using ZeusBusiness.Dev;
 using ZeusBusiness.Model.Generics.General;
-using ZeusBusiness.ViewModel.ViewBinder;
+using ZeusBusiness.MVVM.Model.Generics.General;
+using ZeusBusiness.MVVM.ViewModel.ViewBinder;
 
 namespace ZeusBusiness.MVVM.ViewModel.Controls.AppDrawer
 {

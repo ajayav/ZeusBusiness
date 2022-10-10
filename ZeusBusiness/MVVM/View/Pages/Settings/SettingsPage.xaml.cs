@@ -1,4 +1,4 @@
-namespace ZeusBusiness.View.Pages.Settings;
+namespace ZeusBusiness.MVVM.View.Pages.Settings;
 
 public partial class SettingsPage : ContentPage
 {

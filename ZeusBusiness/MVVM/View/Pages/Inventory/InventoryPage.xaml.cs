@@ -1,4 +1,4 @@
-namespace ZeusBusiness.View.Pages.Inventory;
+namespace ZeusBusiness.MVVM.View.Pages.Inventory;
 
 public partial class InventoryPage : ContentPage
 {

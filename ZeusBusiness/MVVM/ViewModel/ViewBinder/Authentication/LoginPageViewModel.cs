@@ -1,14 +1,13 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Newtonsoft.Json;
-using System.Text.Json.Serialization;
 using ZeusBusiness.Controls.AppDrawer;
 using ZeusBusiness.Dev;
 using ZeusBusiness.Infrastructure.PermissionChecker;
-using ZeusBusiness.Model.Generics.Authentication;
-using ZeusBusiness.View.Pages.Dashboard;
+using ZeusBusiness.MVVM.Model.Generics.Authentication;
+using ZeusBusiness.MVVM.ViewModel.ViewBinder;
 
-namespace ZeusBusiness.ViewModel.ViewBinder.Authentication
+namespace ZeusBusiness.MVVM.ViewModel.ViewBinder.Authentication
 {
     public partial class LoginPageViewModel : BaseViewModel
     {
@@ -17,7 +16,6 @@ namespace ZeusBusiness.ViewModel.ViewBinder.Authentication
 
         [ObservableProperty]
         private string _password;
-
 
         #region COMMANDS
         [RelayCommand]

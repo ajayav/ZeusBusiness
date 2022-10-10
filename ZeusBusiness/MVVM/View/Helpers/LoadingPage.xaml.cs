@@ -1,6 +1,6 @@
-using ZeusBusiness.ViewModel.Helpers;
+using ZeusBusiness.MVVM.ViewModel.Helpers;
 
-namespace ZeusBusiness.View.Helpers;
+namespace ZeusBusiness.MVVM.View.Helpers;
 
 public partial class LoadingPage : ContentPage
 {
