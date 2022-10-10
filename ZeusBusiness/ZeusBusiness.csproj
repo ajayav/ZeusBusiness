@@ -66,10 +66,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="View\Pages\Authentication\LoginPage.xaml.cs">
+	  <Compile Update="MVVM\View\Pages\Authentication\LoginPage.xaml.cs">
 	    <DependentUpon>%(Filename)</DependentUpon>
 	  </Compile>
-	  <Compile Update="View\Pages\Dashboard\OwnerDashboardPage.xaml.cs">
+	  <Compile Update="MVVM\View\Pages\Dashboard\OwnerDashboardPage.xaml.cs">
 	    <DependentUpon>%(Filename)</DependentUpon>
 	  </Compile>
 	</ItemGroup>
@@ -78,25 +78,25 @@
 	  <MauiXaml Update="Controls\AppDrawer\FlyoutHeaderControl.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="View\Helpers\LoadingPage.xaml">
+	  <MauiXaml Update="MVVM\View\Helpers\LoadingPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="View\Pages\Authentication\LoginPage.xaml">
+	  <MauiXaml Update="MVVM\View\Pages\Authentication\LoginPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="View\Pages\Crm\CrmPage.xaml">
+	  <MauiXaml Update="MVVM\View\Pages\Crm\CrmPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="View\Pages\Dashboard\OwnerDashboardPage.xaml">
+	  <MauiXaml Update="MVVM\View\Pages\Dashboard\OwnerDashboardPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="View\Pages\Inventory\InventoryPage.xaml">
+	  <MauiXaml Update="MVVM\View\Pages\Inventory\InventoryPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="View\Pages\Report\ReportPage.xaml">
+	  <MauiXaml Update="MVVM\View\Pages\Report\ReportPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="View\Pages\Settings\SettingsPage.xaml">
+	  <MauiXaml Update="MVVM\View\Pages\Settings\SettingsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

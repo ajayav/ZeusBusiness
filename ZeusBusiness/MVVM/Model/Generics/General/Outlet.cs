@@ -1,4 +1,4 @@
-﻿namespace ZeusBusiness.Model.Generics.General
+﻿namespace ZeusBusiness.MVVM.Model.Generics.General
 {
     public class Outlet
     {

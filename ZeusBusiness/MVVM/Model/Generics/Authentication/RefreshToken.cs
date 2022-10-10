@@ -1,4 +1,4 @@
-﻿namespace ZeusBusiness.Model.Generics.Authentication
+﻿namespace ZeusBusiness.MVVM.Model.Generics.Authentication
 {
     public class RefreshToken
     {

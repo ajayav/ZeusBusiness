@@ -1,4 +1,4 @@
-﻿using ZeusBusiness.Model.Generics.Authentication;
+﻿using ZeusBusiness.MVVM.Model.Generics.Authentication;
 
 namespace ZeusBusiness.Model.Generics.General
 {
