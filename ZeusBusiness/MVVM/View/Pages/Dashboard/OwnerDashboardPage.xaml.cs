@@ -1,8 +1,6 @@
+using ZeusBusiness.MVVM.ViewModel.ViewBinder.Dashboard;
 
-
-using ZeusBusiness.ViewModel.ViewBinder.Dashboard;
-
-namespace ZeusBusiness.View.Pages.Dashboard;
+namespace ZeusBusiness.MVVM.View.Pages.Dashboard;
 
 public partial class OwnerDashboardPage : ContentPage
 {

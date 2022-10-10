@@ -1,4 +1,4 @@
-﻿namespace ZeusBusiness.Model.Icons
+﻿namespace ZeusBusiness.MVVM.Model.Icons
 {
     public static class AppDrawer
     {

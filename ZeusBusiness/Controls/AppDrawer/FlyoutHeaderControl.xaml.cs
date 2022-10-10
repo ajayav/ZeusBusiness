@@ -1,9 +1,7 @@
-using CommunityToolkit.Mvvm.ComponentModel;
 using Newtonsoft.Json;
-using ZeusBusiness.Dev;
 using ZeusBusiness.Model.Generics.General;
-using ZeusBusiness.ViewModel.Controls.AppDrawer;
-using ZeusBusiness.ViewModel.ViewBinder.Authentication;
+using ZeusBusiness.MVVM.Model.Generics.General;
+using ZeusBusiness.MVVM.ViewModel.Controls.AppDrawer;
 
 namespace ZeusBusiness.Controls.AppDrawer;
 

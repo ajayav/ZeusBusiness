@@ -2,10 +2,8 @@
 using ZeusBusiness.Controls.AppDrawer;
 using ZeusBusiness.Dev;
 using ZeusBusiness.Infrastructure.PermissionChecker;
-using ZeusBusiness.Model.Generics.Authentication;
-using ZeusBusiness.Model.Generics.General;
-using ZeusBusiness.View.Pages.Authentication;
-using ZeusBusiness.View.Pages.Dashboard;
+using ZeusBusiness.MVVM.Model.Generics.Authentication;
+using ZeusBusiness.MVVM.View.Pages.Authentication;
 
 namespace ZeusBusiness.MVVM.ViewModel.Helpers
 {

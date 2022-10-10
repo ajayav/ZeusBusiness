@@ -1,11 +1,11 @@
 ﻿using ZeusBusiness.Controls.AppDrawer;
-using ZeusBusiness.Model.Generics.General;
-using ZeusBusiness.Model.Icons;
-using ZeusBusiness.View.Pages.Crm;
-using ZeusBusiness.View.Pages.Dashboard;
-using ZeusBusiness.View.Pages.Inventory;
-using ZeusBusiness.View.Pages.Report;
-using ZeusBusiness.View.Pages.Settings;
+using ZeusBusiness.MVVM.Model.Generics.General;
+using ZeusBusiness.MVVM.Model.Icons;
+using ZeusBusiness.MVVM.View.Pages.Crm;
+using ZeusBusiness.MVVM.View.Pages.Dashboard;
+using ZeusBusiness.MVVM.View.Pages.Inventory;
+using ZeusBusiness.MVVM.View.Pages.Report;
+using ZeusBusiness.MVVM.View.Pages.Settings;
 
 namespace ZeusBusiness.Infrastructure.PermissionChecker
 {

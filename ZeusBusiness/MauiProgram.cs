@@ -1,16 +1,16 @@
 ﻿using CommunityToolkit.Maui;
+using ZeusBusiness.MVVM.View.Helpers;
+using ZeusBusiness.MVVM.View.Pages.Authentication;
+using ZeusBusiness.MVVM.View.Pages.Crm;
+using ZeusBusiness.MVVM.View.Pages.Dashboard;
+using ZeusBusiness.MVVM.View.Pages.Inventory;
+using ZeusBusiness.MVVM.View.Pages.Report;
+using ZeusBusiness.MVVM.View.Pages.Settings;
 using ZeusBusiness.MVVM.ViewModel.Controls.AppDrawer;
 using ZeusBusiness.MVVM.ViewModel.Helpers;
 using ZeusBusiness.MVVM.ViewModel.ViewBinder;
 using ZeusBusiness.MVVM.ViewModel.ViewBinder.Authentication;
 using ZeusBusiness.MVVM.ViewModel.ViewBinder.Dashboard;
-using ZeusBusiness.View.Helpers;
-using ZeusBusiness.View.Pages.Authentication;
-using ZeusBusiness.View.Pages.Crm;
-using ZeusBusiness.View.Pages.Dashboard;
-using ZeusBusiness.View.Pages.Inventory;
-using ZeusBusiness.View.Pages.Report;
-using ZeusBusiness.View.Pages.Settings;
 
 namespace ZeusBusiness;
 

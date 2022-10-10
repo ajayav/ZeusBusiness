@@ -1,6 +1,5 @@
-﻿using ZeusBusiness.View.Helpers;
-using ZeusBusiness.View.Pages.Dashboard;
-using ZeusBusiness.ViewModel.ViewBinder;
+﻿using ZeusBusiness.MVVM.View.Pages.Dashboard;
+using ZeusBusiness.MVVM.ViewModel.ViewBinder;
 
 namespace ZeusBusiness;
 
