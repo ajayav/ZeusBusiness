@@ -15,6 +15,9 @@ namespace ZeusBusiness.Infrastructure.PermissionChecker
         {
             AppShell.Current.FlyoutHeader = new FlyoutHeaderControl();
             var flyoutItem = new FlyoutItem();
+            var currentFlyout = AppShell.Current.Items.FirstOrDefault(x => x.GetType() == typeof(FlyoutItem));
+            if (currentFlyout != null)
+                AppShell.Current.Items.Remove(currentFlyout);
             //flyoutItem.Items.Add(new ShellContent
             //{
             //    Title = "Dashboard",
@@ -63,9 +66,6 @@ namespace ZeusBusiness.Infrastructure.PermissionChecker
 
             if (!AppShell.Current.Items.Contains(flyoutItem))
             {
-                //AppShell.Current.Items.Clear();
-                //AppShell.Current.Items.(flyoutItem);
-                
                 AppShell.Current.Items.Add(flyoutItem);
                 await Shell.Current.GoToAsync($"//{nameof(OwnerDashboardPage)}");
             }
