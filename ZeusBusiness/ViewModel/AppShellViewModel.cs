@@ -12,7 +12,9 @@ namespace ZeusBusiness.ViewModel.ViewBinder
             {
                 Preferences.Remove(nameof(App.AuthResponse));
             }
+            
             await Shell.Current.GoToAsync($"//{nameof(LoginPage)}");
+            //AppShell.Current.Items.Clear();
         }
     }
 }

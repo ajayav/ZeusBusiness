@@ -20,6 +20,7 @@ namespace ZeusBusiness.Dev
                 Id = 2,
                 Name = "AJ"
             };
+
             OutletUser outletUser = new OutletUser
             {
                 Outlet = outlet,

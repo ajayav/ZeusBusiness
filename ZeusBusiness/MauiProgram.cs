@@ -6,6 +6,7 @@ using ZeusBusiness.View.Pages.Dashboard;
 using ZeusBusiness.View.Pages.Inventory;
 using ZeusBusiness.View.Pages.Report;
 using ZeusBusiness.View.Pages.Settings;
+using ZeusBusiness.ViewModel.Controls.AppDrawer;
 using ZeusBusiness.ViewModel.Helpers;
 using ZeusBusiness.ViewModel.ViewBinder;
 using ZeusBusiness.ViewModel.ViewBinder.Authentication;
@@ -31,7 +32,7 @@ public static class MauiProgram
 		builder.Services.AddSingleton<LoginPage>();
 		builder.Services.AddSingleton<OwnerDashboardPage>();
 		builder.Services.AddSingleton<LoadingPage>();
-		builder.Services.AddSingleton<InventoryPage>();
+		builder.Services.AddSingleton<InventoryPage>();	
 		builder.Services.AddSingleton<ReportPage>();
 		builder.Services.AddSingleton<CrmPage>();
 		builder.Services.AddSingleton<SettingsPage>();
@@ -41,6 +42,7 @@ public static class MauiProgram
 		builder.Services.AddSingleton<OwnerDashboardViewModel>();
 		builder.Services.AddSingleton<AppShellViewModel>();
 		builder.Services.AddSingleton<LoadingPageViewModel>();
+		builder.Services.AddSingleton<FlyoutHeaderControlViewModel>();
 
 
 		//Routing

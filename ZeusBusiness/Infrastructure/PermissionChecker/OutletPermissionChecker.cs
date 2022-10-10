@@ -15,8 +15,12 @@ namespace ZeusBusiness.Infrastructure.PermissionChecker
         {
             AppShell.Current.FlyoutHeader = new FlyoutHeaderControl();
             var flyoutItem = new FlyoutItem();
-            //flyoutItem.Title = "Dashboard";
-            //flyoutItem.Route = nameof(OwnerDashboardPage);
+            //flyoutItem.Items.Add(new ShellContent
+            //{
+            //    Title = "Dashboard",
+            //    ContentTemplate = new DataTemplate(typeof(OwnerDashboardPage)),
+            //    Route = nameof(OwnerDashboardPage)
+            //});
             flyoutItem.FlyoutDisplayOptions = FlyoutDisplayOptions.AsMultipleItems;
             if (App.OutletUser.Outlet.PurchasePlan.HasFlag(PurchasePlan.Inventory))
             {
@@ -26,8 +30,8 @@ namespace ZeusBusiness.Infrastructure.PermissionChecker
                     Icon = AppDrawer.Inventory,
                     ContentTemplate = new DataTemplate(typeof(InventoryPage))
 
-                }) ;   
-                
+                });
+
             }
 
             if (App.OutletUser.Outlet.PurchasePlan.HasFlag(PurchasePlan.Report))
@@ -37,7 +41,7 @@ namespace ZeusBusiness.Infrastructure.PermissionChecker
                     Title = "Report",
                     Icon = AppDrawer.Report,
                     ContentTemplate = new DataTemplate(typeof(ReportPage))
-                }) ;
+                });
             }
 
             if (App.OutletUser.Outlet.PurchasePlan.HasFlag(PurchasePlan.Crm))
@@ -57,7 +61,14 @@ namespace ZeusBusiness.Infrastructure.PermissionChecker
                 ContentTemplate = new DataTemplate(typeof(SettingsPage))
             });
 
-            await Shell.Current.GoToAsync($"//{nameof(OwnerDashboardPage)}");
+            if (!AppShell.Current.Items.Contains(flyoutItem))
+            {
+                //AppShell.Current.Items.Clear();
+                //AppShell.Current.Items.(flyoutItem);
+                
+                AppShell.Current.Items.Add(flyoutItem);
+                await Shell.Current.GoToAsync($"//{nameof(OwnerDashboardPage)}");
+            }
         }
     }
 }

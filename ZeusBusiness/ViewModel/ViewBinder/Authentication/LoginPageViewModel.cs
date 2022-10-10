@@ -49,6 +49,7 @@ namespace ZeusBusiness.ViewModel.ViewBinder.Authentication
                     var outletUser = await FakeOutletUser.FetchOutletUser();
                     App.OutletUser = outletUser;
                 }
+                //AppShell.Current.Items.Clear();
                 await OutletPermissionChecker.AddFlyoutItems();
                 //await Shell.Current.GoToAsync($"//{nameof(OwnerDashboardPage)}");
             }

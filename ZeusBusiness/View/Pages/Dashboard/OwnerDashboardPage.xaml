@@ -4,9 +4,9 @@
              x:Class="ZeusBusiness.View.Pages.Dashboard.OwnerDashboardPage"
              Title="Dashboard">
     <VerticalStackLayout>
-        <Label 
-            Text="{Binding Title}"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+       
+        <Label Text="{Binding Title}"
+               VerticalOptions="Center"
+               HorizontalOptions="Center" />
     </VerticalStackLayout>
 </ContentPage>

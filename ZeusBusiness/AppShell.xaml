@@ -20,10 +20,12 @@
                   Shell.FlyoutBehavior="Disabled"
                   FlyoutItemIsVisible="False" />
 
+ 
 
     <ShellContent Title="Dashboard"
                   Icon="{x:Static icons:AppDrawer.Dashboard}"
-                  ContentTemplate="{DataTemplate dashboard:OwnerDashboardPage}" />
+                  ContentTemplate="{DataTemplate dashboard:OwnerDashboardPage}"
+                  Route="OwnerDashboardPage"/>
 
     <!--<FlyoutItem Route="OwnerDashboardPage"
                 FlyoutDisplayOptions="AsMultipleItems">

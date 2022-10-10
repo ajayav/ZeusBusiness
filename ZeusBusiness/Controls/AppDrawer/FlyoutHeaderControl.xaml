@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ZeusBusiness.Controls.AppDrawer.FlyoutHeaderControl"
              xmlns:icons="clr-namespace:ZeusBusiness.Model.Icons"
+             xmlns:outlet="clr-namespace:ZeusBusiness.Model.Generics.General"
              Padding="20">
     
     <Image Source="{x:Static icons:AppDrawer.User}"
@@ -13,5 +14,25 @@
            FontAttributes="Bold" />
     <Label x:Name="emailLbl"
            FontSize="18" />
+
+    <HorizontalStackLayout Padding="20"
+                         HorizontalOptions="End">
+        <Frame HeightRequest="50"
+               Padding="20"
+               HasShadow="True"
+               BorderColor="#404040">
+            <Picker x:Name="outletPicker"
+                    Title="Select Outlet"
+                    WidthRequest="150"
+                    HeightRequest="45"
+                    ItemsSource="{Binding OutletList}"
+                    ItemDisplayBinding="{Binding Name}"
+                    TextColor="Black"
+                    SelectedIndexChanged="outletPicker_SelectedIndexChanged">
+
+            </Picker>
+        </Frame>
+
+    </HorizontalStackLayout>
 
 </StackLayout>
