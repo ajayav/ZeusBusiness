@@ -5,7 +5,7 @@ using ZeusBusiness.Dev;
 using ZeusBusiness.Model.Generics.General;
 using ZeusBusiness.ViewModel.ViewBinder;
 
-namespace ZeusBusiness.ViewModel.Controls.AppDrawer
+namespace ZeusBusiness.MVVM.ViewModel.Controls.AppDrawer
 {
     public partial class FlyoutHeaderControlViewModel : BaseViewModel
     {

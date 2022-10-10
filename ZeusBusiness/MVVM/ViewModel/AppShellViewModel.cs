@@ -1,7 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.Input;
 using ZeusBusiness.View.Pages.Authentication;
 
-namespace ZeusBusiness.ViewModel.ViewBinder
+namespace ZeusBusiness.MVVM.ViewModel.ViewBinder
 {
     public partial class AppShellViewModel : BaseViewModel { 
 

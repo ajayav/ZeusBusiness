@@ -7,7 +7,7 @@ using ZeusBusiness.Model.Generics.General;
 using ZeusBusiness.View.Pages.Authentication;
 using ZeusBusiness.View.Pages.Dashboard;
 
-namespace ZeusBusiness.ViewModel.Helpers
+namespace ZeusBusiness.MVVM.ViewModel.Helpers
 {
     public class LoadingPageViewModel
     {

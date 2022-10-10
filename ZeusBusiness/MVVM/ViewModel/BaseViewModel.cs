@@ -1,6 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 
-namespace ZeusBusiness.ViewModel.ViewBinder
+namespace ZeusBusiness.MVVM.ViewModel.ViewBinder
 {
     public partial class BaseViewModel : ObservableObject
     {
