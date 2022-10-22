@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <StackLayout xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ZeusBusiness.Controls.AppDrawer.FlyoutHeaderControl"
+             x:Class="ZeusBusiness.CustomControls.Flyout.FlyoutHeaderControl"
              xmlns:icons="clr-namespace:ZeusBusiness.MVVM.Model.Icons"
              xmlns:outlet="clr-namespace:ZeusBusiness.Model.Generics.General"
              Padding="20">
@@ -15,24 +15,27 @@
     <Label x:Name="emailLbl"
            FontSize="18" />
 
-    <HorizontalStackLayout Padding="20"
-                         HorizontalOptions="End">
-        <Frame HeightRequest="50"
-               Padding="20"
+    <VerticalStackLayout Padding="10"
+                         HorizontalOptions="CenterAndExpand">
+        <!--<Frame HeightRequest="50"
+               WidthRequest="300"
+
                HasShadow="True"
                BorderColor="#404040">
             <Picker x:Name="outletPicker"
                     Title="Select Outlet"
-                    WidthRequest="150"
+                    WidthRequest="300"
                     HeightRequest="45"
+                   Margin="10"
                     ItemsSource="{Binding OutletList}"
                     ItemDisplayBinding="{Binding Name}"
+                    SelectedItem="{Binding selectedOutlet}"
                     TextColor="Black"
                     SelectedIndexChanged="outletPicker_SelectedIndexChanged">
 
             </Picker>
-        </Frame>
+        </Frame>-->
 
-    </HorizontalStackLayout>
+    </VerticalStackLayout>
 
 </StackLayout>

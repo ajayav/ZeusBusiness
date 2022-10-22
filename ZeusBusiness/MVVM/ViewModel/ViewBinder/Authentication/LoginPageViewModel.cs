@@ -1,21 +1,37 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Newtonsoft.Json;
-using ZeusBusiness.Controls.AppDrawer;
-using ZeusBusiness.Dev;
-using ZeusBusiness.Infrastructure.PermissionChecker;
+using ZeusBusiness.Abstraction.Infrastructure.PermissionGuard;
+using ZeusBusiness.Abstraction.Services.Authentication;
+using ZeusBusiness.CustomControls.Flyout;
+using ZeusBusiness.Infrastructure.PermissionGuard;
 using ZeusBusiness.MVVM.Model.Generics.Authentication;
-using ZeusBusiness.MVVM.ViewModel.ViewBinder;
 
 namespace ZeusBusiness.MVVM.ViewModel.ViewBinder.Authentication
 {
     public partial class LoginPageViewModel : BaseViewModel
     {
+        #region PRIVATE INSTANCE FEILD
+        private IAuthenticationService _service;
+        private IOutletUserGuard _guard;
+        #endregion
+
+        #region CONSTUCTOR
+        public LoginPageViewModel(IAuthenticationService service, IOutletUserGuard guard)
+        {
+            _service = service;
+            _guard = guard;
+        }
+        #endregion
+
+        #region OBSERVABLES
         [ObservableProperty]
         private string _email;
 
         [ObservableProperty]
         private string _password;
+        #endregion
+
 
         #region COMMANDS
         [RelayCommand]
@@ -23,33 +39,36 @@ namespace ZeusBusiness.MVVM.ViewModel.ViewBinder.Authentication
         {
             if (!string.IsNullOrWhiteSpace(Email) && !string.IsNullOrWhiteSpace(Password))
             {
-                //call authenticate api here
-
-                var authResponse = new AuthenticateResponse
+                var authResponse = await _service.Login(new AuthenticateRequest
                 {
                     Email = Email,
-                    Name = "AJ"
-                };
-                if (Preferences.ContainsKey(nameof(App.AuthResponse)))
+                    Password = Password
+                });
+
+                if (authResponse.Success)
                 {
-                    Preferences.Remove(nameof(App.AuthResponse));
+                    if (Preferences.ContainsKey(nameof(App.AuthResponse)))
+                    {
+                        Preferences.Remove(nameof(App.AuthResponse));
+                    }
+
+                    string authResponseStr = JsonConvert.SerializeObject(authResponse.Data);
+                    Preferences.Set(nameof(App.AuthResponse), authResponseStr);
+                    App.AuthResponse = authResponse.Data;
+                    AppShell.Current.FlyoutHeader = new FlyoutHeaderControl(_guard);
+                    Email = "";
+                    Password = "";
+                    await _guard.SetOutletUser();
+                    await OutletGuard.AddFlyoutItems();
+                }
+                else
+                {
+                    await AppShell.Current.DisplayAlert("Invalid User", authResponse.Response, "OK");
                 }
 
-                string authResponseStr = JsonConvert.SerializeObject(authResponse);
-                Preferences.Set(nameof(App.AuthResponse), authResponseStr);
-                App.AuthResponse = authResponse;
-                AppShell.Current.FlyoutHeader = new FlyoutHeaderControl();
-                Email = "";
-                Password = "";
-                string outletUserStr = Preferences.Get(nameof(App.OutletUser), "");
-                if (string.IsNullOrEmpty(outletUserStr))
-                {
-                    var outletUser = await FakeOutletUser.FetchOutletUser();
-                    App.OutletUser = outletUser;
-                }
-                //AppShell.Current.Items.Clear();
-                await OutletPermissionChecker.AddFlyoutItems();
-                //await Shell.Current.GoToAsync($"//{nameof(OwnerDashboardPage)}");
+
+
+
             }
         }
         #endregion

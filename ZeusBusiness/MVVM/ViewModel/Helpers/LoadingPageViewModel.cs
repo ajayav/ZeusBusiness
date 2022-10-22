@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
-using ZeusBusiness.Controls.AppDrawer;
-using ZeusBusiness.Dev;
-using ZeusBusiness.Infrastructure.PermissionChecker;
+using ZeusBusiness.Abstraction.Infrastructure.PermissionGuard;
+using ZeusBusiness.CustomControls.Flyout;
+using ZeusBusiness.Infrastructure.PermissionGuard;
 using ZeusBusiness.MVVM.Model.Generics.Authentication;
 using ZeusBusiness.MVVM.View.Pages.Authentication;
 
@@ -9,19 +9,15 @@ namespace ZeusBusiness.MVVM.ViewModel.Helpers
 {
     public class LoadingPageViewModel
     {
-        public LoadingPageViewModel()
+        private readonly IOutletUserGuard _guard;
+        public LoadingPageViewModel(IOutletUserGuard guard)
         {
+            _guard = guard;
             CheckUserLoginDetails();
         }
 
         private async void CheckUserLoginDetails()
         {
-            string outletUserStr = Preferences.Get(nameof(App.OutletUser), "");
-            if (string.IsNullOrEmpty(outletUserStr))
-            {
-                var outletUser = await FakeOutletUser.FetchOutletUser();
-                App.OutletUser = outletUser;
-            }
             string authResponseStr = Preferences.Get(nameof(App.AuthResponse), "");
             if (string.IsNullOrEmpty(authResponseStr))
             {
@@ -31,9 +27,9 @@ namespace ZeusBusiness.MVVM.ViewModel.Helpers
             {
                 var authResponse = JsonConvert.DeserializeObject<AuthenticateResponse>(authResponseStr);
                 App.AuthResponse = authResponse;
-                AppShell.Current.FlyoutHeader = new FlyoutHeaderControl();
-                await OutletPermissionChecker.AddFlyoutItems();
-                //await Shell.Current.GoToAsync($"//{nameof(OwnerDashboardPage)}");
+                await _guard.SetOutletUser();
+                AppShell.Current.FlyoutHeader = new FlyoutHeaderControl(_guard);
+                await OutletGuard.AddFlyoutItems();
             }
         }
     }
