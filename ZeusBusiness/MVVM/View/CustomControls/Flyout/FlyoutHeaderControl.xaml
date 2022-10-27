@@ -3,9 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ZeusBusiness.CustomControls.Flyout.FlyoutHeaderControl"
              xmlns:icons="clr-namespace:ZeusBusiness.MVVM.Model.Icons"
-             xmlns:outlet="clr-namespace:ZeusBusiness.Model.Generics.General"
+             xmlns:customControls="clr-namespace:ZeusBusiness.MVVM.View.CustomControls.OutletPopup"
              Padding="20">
-    
+
     <Image Source="{x:Static icons:AppDrawer.User}"
            HeightRequest="25"
            WidthRequest="25" />
@@ -17,24 +17,26 @@
 
     <VerticalStackLayout Padding="10"
                          HorizontalOptions="CenterAndExpand">
-        <!--<Frame HeightRequest="50"
-               WidthRequest="300"
+        <customControls:OutletDropDown x:Name="outletDropDown"
+                                       Placeholder="--Select Outlet--"
+                                       ItemSource="{Binding Outlets}"
+                                       IsLoading="{Binding IsLoading}"
+                                       CurrentItem="{Binding CurrentOutlet}"
+                                       IsDisplayPickerControl="{Binding IsDiplayPicker}"
+                                       OpenPickerCommand="{Binding OpenPickerCommand}"
+                                       DisplayMember="Name"
+                                       PickerHeight="200">
+            <customControls:OutletDropDown.ItemTemplate>
+                <DataTemplate>
 
-               HasShadow="True"
-               BorderColor="#404040">
-            <Picker x:Name="outletPicker"
-                    Title="Select Outlet"
-                    WidthRequest="300"
-                    HeightRequest="45"
-                   Margin="10"
-                    ItemsSource="{Binding OutletList}"
-                    ItemDisplayBinding="{Binding Name}"
-                    SelectedItem="{Binding selectedOutlet}"
-                    TextColor="Black"
-                    SelectedIndexChanged="outletPicker_SelectedIndexChanged">
+                    <Label Text="{Binding Name}"
+                           Padding="5,5,0,5"
+                           FontSize="20" />
 
-            </Picker>
-        </Frame>-->
+
+                </DataTemplate>
+            </customControls:OutletDropDown.ItemTemplate>
+        </customControls:OutletDropDown>
 
     </VerticalStackLayout>
 

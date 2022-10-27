@@ -1,10 +1,14 @@
 ﻿using CommunityToolkit.Maui;
 using ZeusBusiness.Abstraction.Infrastructure.PermissionGuard;
 using ZeusBusiness.Abstraction.Infrastructure.ProviderBase;
+using ZeusBusiness.Abstraction.Infrastructure.Token;
 using ZeusBusiness.Abstraction.Services.Authentication;
 using ZeusBusiness.Abstraction.Services.General;
+using ZeusBusiness.CustomControls.Flyout;
 using ZeusBusiness.Infrastructure.PermissionGuard;
 using ZeusBusiness.Infrastructure.ProviderBase;
+using ZeusBusiness.Infrastructure.Tokens;
+using ZeusBusiness.MVVM.View.CustomControls.OutletPopup;
 using ZeusBusiness.MVVM.View.Helpers;
 using ZeusBusiness.MVVM.View.Pages.Authentication;
 using ZeusBusiness.MVVM.View.Pages.Crm;
@@ -53,6 +57,11 @@ public static class MauiProgram
 		builder.Services.AddSingleton<LoadingPageViewModel>();
 		builder.Services.AddSingleton<FlyoutHeaderControlViewModel>();
 
+		//Custom Controls
+		builder.Services.AddSingleton<FlyoutHeaderControl>();
+		builder.Services.AddSingleton<OutletDropDown>();
+		builder.Services.AddSingleton<OutletPopupView>();
+
 		//Services
 
 		builder.Services.AddSingleton<IRequestProvider, RequestProvider>();
@@ -61,6 +70,9 @@ public static class MauiProgram
 
 		//
 		builder.Services.AddSingleton<IOutletUserGuard, OutletUserGuard>();
+
+		//Token
+		builder.Services.AddSingleton<IUserToken, UserToken>();
 
 
 		//Routing

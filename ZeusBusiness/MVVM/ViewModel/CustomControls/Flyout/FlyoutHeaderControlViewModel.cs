@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using Newtonsoft.Json;
 using System.Collections.ObjectModel;
 using ZeusBusiness.Abstraction.Infrastructure.PermissionGuard;
@@ -10,7 +11,7 @@ using ZeusBusiness.MVVM.ViewModel.ViewBinder;
 
 namespace ZeusBusiness.MVVM.ViewModel.CustomControls.Flyout
 {
-    public partial class FlyoutHeaderControlViewModel : BaseViewModel
+    public partial class FlyoutHeaderControlViewModel : ObservableObject
     {
         #region PRIVATE INSTANCE FEILD
         private IOutletUserGuard _guard;
@@ -20,35 +21,37 @@ namespace ZeusBusiness.MVVM.ViewModel.CustomControls.Flyout
         public FlyoutHeaderControlViewModel(IOutletUserGuard guard)
         {
             _guard = guard;
-            //GetSelectedOutlet();
-            //GetAllOutlets();
         }
         #endregion
 
-        //[ObservableProperty]
-        //public ObservableCollection<Outlet> outletList = new();
+        public ObservableCollection<Outlet> Outlets { get; set; } = new ObservableCollection<Outlet>();
 
-        //[ObservableProperty]
-        //public Outlet selectedOutlet = new Outlet();
+        [ObservableProperty]
+        private bool _isLoading;
 
-        //private async void GetAllOutlets()
-        //{
-        //    var outletUserList = await _guard.GetAllOutletUser();
-        //    foreach (var outletUser in outletUserList)
-        //    {
-        //        outletUser.Outlet.Name = outletUser.Outlet.Name + ", " + outletUser.Outlet.Location;
-        //        outletList.Add(outletUser.Outlet);
-        //    }
-        //}
+        [ObservableProperty]
+        private bool _isDisplayPicker;
 
-        //private void GetSelectedOutlet()
-        //{
-        //    if (Preferences.ContainsKey(nameof(App.OutletUser)))
-        //    {
-        //        string outletUserStr = Preferences.Get(nameof(App.OutletUser), "");
-        //        selectedOutlet = JsonConvert.DeserializeObject<OutletUser>(outletUserStr).Outlet;
-        //    }
-        //}
+        [ObservableProperty]
+        private Outlet _currentOutlet;
+
+        [RelayCommand]
+        public async void OpenPicker()
+        {
+            IsLoading = true;
+            await Task.Delay(2000);
+            Outlets.Clear();
+            Outlets.Add(new Outlet { Name = "Mint Super Bazar" });
+            Outlets.Add(new Outlet { Name = "Mint Hebbal" });
+            Outlets.Add(new Outlet { Name = "Mint Wtf" });
+            Outlets.Add(new Outlet { Name = "Smart Infotech" });
+            Outlets.Add(new Outlet { Name = "Shopwel" });
+            Outlets.Add(new Outlet { Name = "All Market" });
+            Outlets.Add(new Outlet { Name = "All Season" });
+
+            IsLoading = false;
+            IsDisplayPicker = true;
+        }
 
     }
 }

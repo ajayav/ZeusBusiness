@@ -1,8 +1,7 @@
-﻿using Newtonsoft.Json;
-using ZeusBusiness.Abstraction.Infrastructure.PermissionGuard;
+﻿using ZeusBusiness.Abstraction.Infrastructure.PermissionGuard;
+using ZeusBusiness.Abstraction.Infrastructure.Token;
 using ZeusBusiness.CustomControls.Flyout;
 using ZeusBusiness.Infrastructure.PermissionGuard;
-using ZeusBusiness.MVVM.Model.Generics.Authentication;
 using ZeusBusiness.MVVM.View.Pages.Authentication;
 
 namespace ZeusBusiness.MVVM.ViewModel.Helpers
@@ -10,9 +9,11 @@ namespace ZeusBusiness.MVVM.ViewModel.Helpers
     public class LoadingPageViewModel
     {
         private readonly IOutletUserGuard _guard;
-        public LoadingPageViewModel(IOutletUserGuard guard)
+        private IUserToken _token;
+        public LoadingPageViewModel(IOutletUserGuard guard, IUserToken token)
         {
             _guard = guard;
+            _token = token;
             CheckUserLoginDetails();
         }
 
@@ -25,8 +26,9 @@ namespace ZeusBusiness.MVVM.ViewModel.Helpers
             }
             else
             {
-                var authResponse = JsonConvert.DeserializeObject<AuthenticateResponse>(authResponseStr);
-                App.AuthResponse = authResponse;
+                //var authResponse = JsonConvert.DeserializeObject<AuthenticateResponse>(authResponseStr);
+                //App.AuthResponse = authResponse;
+                await _token.RefreshToken();
                 await _guard.SetOutletUser();
                 AppShell.Current.FlyoutHeader = new FlyoutHeaderControl(_guard);
                 await OutletGuard.AddFlyoutItems();

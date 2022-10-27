@@ -29,6 +29,10 @@ namespace ZeusBusiness.Infrastructure.ProviderBase
         #region PUBLIC METHODS
         public async Task<Envelope<T>> PostAsync<T>(string requesturl, StringContent data)
         {
+            if (App.JwtToken != null)
+            {
+                _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", App.JwtToken);
+            }
             var response = await _client.PostAsync(requesturl, data).ConfigureAwait(false);
             if (response.IsSuccessStatusCode)
             {
@@ -41,9 +45,9 @@ namespace ZeusBusiness.Infrastructure.ProviderBase
 
         public async Task<string> GetAsync(string requesturl)
         {
-            if (App.AuthResponse != null)
+            if (App.JwtToken != null)
             {
-                _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", App.AuthResponse.JwtToken);
+                _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", App.JwtToken);
             }
             var response = await _client.GetAsync(requesturl).ConfigureAwait(false);
             if (response.IsSuccessStatusCode)

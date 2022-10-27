@@ -10,13 +10,13 @@ namespace ZeusBusiness.Services.Authentication
     public class AuthenticationService : IAuthenticationService
     {
         #region PRIVATE INSTANCES
-        private IRequestProvider _request;
+        private IRequestProvider _http;
         #endregion
 
         #region CONSTRUCTOR
-        public AuthenticationService(IRequestProvider request)
+        public AuthenticationService(IRequestProvider http)
         {
-            _request = request;
+            _http = http;
         }
         #endregion
 
@@ -25,8 +25,15 @@ namespace ZeusBusiness.Services.Authentication
         {
             var json = JsonConvert.SerializeObject(request);
             var stringContent = new StringContent(json.ToString(), Encoding.UTF8, "application/json");
-            var response = await _request.PostAsync<AuthenticateResponse>($"authentication/login", stringContent).ConfigureAwait(false);
+            var response = await _http.PostAsync<AuthenticateResponse>($"authentication/login", stringContent).ConfigureAwait(false);
             return response;
+        }
+
+        public async Task<Envelope<AuthenticateResponse>> GenerateJwtToken()
+        {
+            var response = await _http.GetAsync($"authentication/refresh-token");
+            var authResponse = JsonConvert.DeserializeObject<Envelope<AuthenticateResponse>>(response);
+            return authResponse;
         }
         #endregion
     }

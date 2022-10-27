@@ -5,6 +5,7 @@ using ZeusBusiness.Abstraction.Infrastructure.PermissionGuard;
 using ZeusBusiness.Abstraction.Services.Authentication;
 using ZeusBusiness.CustomControls.Flyout;
 using ZeusBusiness.Infrastructure.PermissionGuard;
+using ZeusBusiness.MVVM.Model.Common;
 using ZeusBusiness.MVVM.Model.Generics.Authentication;
 
 namespace ZeusBusiness.MVVM.ViewModel.ViewBinder.Authentication
@@ -51,10 +52,11 @@ namespace ZeusBusiness.MVVM.ViewModel.ViewBinder.Authentication
                     {
                         Preferences.Remove(nameof(App.AuthResponse));
                     }
-
+                    await SecureStorage.SetAsync(nameof(App.JwtToken), authResponse.Data.JwtToken);
                     string authResponseStr = JsonConvert.SerializeObject(authResponse.Data);
                     Preferences.Set(nameof(App.AuthResponse), authResponseStr);
                     App.AuthResponse = authResponse.Data;
+                    App.JwtToken = authResponse.Data.JwtToken;
                     AppShell.Current.FlyoutHeader = new FlyoutHeaderControl(_guard);
                     Email = "";
                     Password = "";

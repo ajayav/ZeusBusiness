@@ -10,6 +10,7 @@ public partial class App : Application
 	public static AuthenticateResponse AuthResponse;
 	public static OutletUser OutletUser;
 	public static Outlet Outlet;
+	public static string JwtToken;
 	public App()
 	{
 		InitializeComponent();
