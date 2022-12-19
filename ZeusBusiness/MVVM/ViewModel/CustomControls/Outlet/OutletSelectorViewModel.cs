@@ -27,7 +27,7 @@ public partial class OutletSelectorViewModel : BaseViewModel
         GetOutletsByUserId();
 
     }       
-
+        
     private async Task GetOutletsByUserId()
     {
         var result = await _service.GetAllOutletsByUserId();

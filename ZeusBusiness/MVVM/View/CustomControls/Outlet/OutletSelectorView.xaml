@@ -19,7 +19,7 @@
                            HorizontalOptions="Center"
                            VerticalOptions="CenterAndExpand">
                         <Label Text="{Binding Outlet.Name}" />
-                        <!--<Label Text="{Binding Outlet.Location}" />-->
+                        <Label Text="{Binding Outlet.Location}" />
                     </Frame>
                 </StackLayout>
             </DataTemplate>
