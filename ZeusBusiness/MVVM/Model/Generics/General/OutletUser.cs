@@ -1,7 +1,6 @@
 ﻿using ZeusBusiness.MVVM.Model.Generics.Authentication;
-using ZeusBusiness.MVVM.Model.Generics.General;
 
-namespace ZeusBusiness.Model.Generics.General
+namespace ZeusBusiness.MVVM.Model.Generics.General
 {
     public class OutletUser
     {

@@ -1,8 +1,8 @@
 ﻿using Newtonsoft.Json;
 using ZeusBusiness.Abstraction.Infrastructure.ProviderBase;
 using ZeusBusiness.Abstraction.Services.General;
-using ZeusBusiness.Model.Generics.General;
 using ZeusBusiness.MVVM.Model.Common;
+using ZeusBusiness.MVVM.Model.Generics.General;
 
 namespace ZeusBusiness.Services.General
 {

@@ -1,5 +1,4 @@
-﻿using ZeusBusiness.Model.Generics.General;
-using ZeusBusiness.MVVM.Model.Generics.Authentication;
+﻿using ZeusBusiness.MVVM.Model.Generics.Authentication;
 using ZeusBusiness.MVVM.Model.Generics.General;
 
 namespace ZeusBusiness.Dev

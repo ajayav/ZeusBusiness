@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System.Net;
 using System.Net.Http.Headers;
 using ZeusBusiness.Abstraction.Infrastructure.ProviderBase;
 using ZeusBusiness.MVVM.Model.Common;
@@ -14,17 +15,17 @@ namespace ZeusBusiness.Infrastructure.ProviderBase
         #region CONSTRUCTOR
         public RequestProvider()
         {
-            _client = new HttpClient()
+            CookieContainer cookies = new CookieContainer();
+            HttpClientHandler handler = new HttpClientHandler();
+            handler.CookieContainer = cookies;
+            handler.UseCookies = true;
+            _client = new HttpClient(handler)
             {
                 BaseAddress = new Uri("http://49.205.192.134:505/api/v1/")
             };
             _client.DefaultRequestHeaders.Clear();
-           
-
         }
         #endregion
-
-
 
         #region PUBLIC METHODS
         public async Task<Envelope<T>> PostAsync<T>(string requesturl, StringContent data)

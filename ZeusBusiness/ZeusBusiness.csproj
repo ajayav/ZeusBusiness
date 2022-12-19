@@ -57,6 +57,7 @@
 	  <None Remove="Resources\Images\report.svg" />
 	  <None Remove="Resources\Images\settings.svg" />
 	  <None Remove="Resources\Images\user.svg" />
+	  <None Remove="Resources\Images\zeus.png" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -77,16 +78,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="MVVM\View\CustomControls\OutletPopup\OutletDropDown.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="MVVM\View\CustomControls\OutletPopup\OutletPopupView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
 	  <MauiXaml Update="MVVM\View\CustomControls\Flyout\FlyoutHeaderControl.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="MVVM\View\CustomControls\Outlet\OutletSelectorView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="MVVM\View\Helpers\LoadingPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="MVVM\View\Pages\Authentication\ForgotPasswordPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="MVVM\View\Pages\Authentication\LoginPage.xaml">

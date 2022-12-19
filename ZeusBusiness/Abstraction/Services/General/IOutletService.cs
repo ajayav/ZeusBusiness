@@ -1,9 +1,8 @@
-﻿using ZeusBusiness.Model.Generics.General;
+﻿using ZeusBusiness.MVVM.Model.Generics.General;
 
-namespace ZeusBusiness.Abstraction.Services.General
+namespace ZeusBusiness.Abstraction.Services.General;
+
+public interface IOutletService
 {
-    public interface IOutletService
-    {
-        public Task<IList<OutletUser>> GetAllOutletsByUserId();
-    }
+    public Task<IList<OutletUser>> GetAllOutletsByUserId(); 
 }

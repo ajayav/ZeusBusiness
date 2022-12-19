@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using ZeusBusiness.Abstraction.Infrastructure.PermissionGuard;
 using ZeusBusiness.Abstraction.Services.General;
-using ZeusBusiness.Model.Generics.General;
+using ZeusBusiness.MVVM.Model.Generics.General;
 
 namespace ZeusBusiness.Infrastructure.PermissionGuard
 {

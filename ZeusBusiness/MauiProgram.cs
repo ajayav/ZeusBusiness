@@ -8,7 +8,7 @@ using ZeusBusiness.CustomControls.Flyout;
 using ZeusBusiness.Infrastructure.PermissionGuard;
 using ZeusBusiness.Infrastructure.ProviderBase;
 using ZeusBusiness.Infrastructure.Tokens;
-using ZeusBusiness.MVVM.View.CustomControls.OutletPopup;
+using ZeusBusiness.MVVM.View.CustomControls.Outlet;
 using ZeusBusiness.MVVM.View.Helpers;
 using ZeusBusiness.MVVM.View.Pages.Authentication;
 using ZeusBusiness.MVVM.View.Pages.Crm;
@@ -17,6 +17,7 @@ using ZeusBusiness.MVVM.View.Pages.Inventory;
 using ZeusBusiness.MVVM.View.Pages.Report;
 using ZeusBusiness.MVVM.View.Pages.Settings;
 using ZeusBusiness.MVVM.ViewModel.CustomControls.Flyout;
+using ZeusBusiness.MVVM.ViewModel.CustomControls.Outlet;
 using ZeusBusiness.MVVM.ViewModel.Helpers;
 using ZeusBusiness.MVVM.ViewModel.ViewBinder;
 using ZeusBusiness.MVVM.ViewModel.ViewBinder.Authentication;
@@ -49,6 +50,7 @@ public static class MauiProgram
 		builder.Services.AddSingleton<CrmPage>();
 		builder.Services.AddSingleton<SettingsPage>();
 		builder.Services.AddSingleton<UserDashboardPage>();
+		builder.Services.AddTransient<OutletSelectorView>();
 
 		//View-Models
 		builder.Services.AddSingleton<LoginPageViewModel>();
@@ -56,11 +58,12 @@ public static class MauiProgram
 		builder.Services.AddSingleton<AppShellViewModel>();
 		builder.Services.AddSingleton<LoadingPageViewModel>();
 		builder.Services.AddSingleton<FlyoutHeaderControlViewModel>();
+		builder.Services.AddSingleton<UserDashboardViewModel>();
+		builder.Services.AddTransient<OutletSelectorViewModel>();
 
 		//Custom Controls
 		builder.Services.AddSingleton<FlyoutHeaderControl>();
-		builder.Services.AddSingleton<OutletDropDown>();
-		builder.Services.AddSingleton<OutletPopupView>();
+
 
 		//Services
 

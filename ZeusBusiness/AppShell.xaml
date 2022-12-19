@@ -5,47 +5,26 @@
        xmlns:local="clr-namespace:ZeusBusiness"
        xmlns:auth="clr-namespace:ZeusBusiness.MVVM.View.Pages.Authentication"
        xmlns:dashboard="clr-namespace:ZeusBusiness.MVVM.View.Pages.Dashboard"
+       xmlns:outlet="clr-namespace:ZeusBusiness.MVVM.View.CustomControls.Outlet"
        xmlns:startup="clr-namespace:ZeusBusiness.MVVM.View.Helpers"
        xmlns:icons="clr-namespace:ZeusBusiness.MVVM.Model.Icons"
        Shell.TabBarIsVisible="False">
 
-    <ShellContent Shell.FlyoutBehavior="Disabled"
-                  ContentTemplate="{DataTemplate startup:LoadingPage}"
-                  Route="LoadingPage"
-                  FlyoutItemIsVisible="False" />
 
-    <ShellContent Shell.NavBarIsVisible="False"
-                  ContentTemplate="{DataTemplate auth:LoginPage}"
+    <ShellContent FlyoutItemIsVisible="False"
+                  Shell.FlyoutBehavior="Disabled"
+                  ContentTemplate="{DataTemplate startup:LoadingPage}"
+                  Route="LoadingPage" />
+
+    <ShellContent ContentTemplate="{DataTemplate auth:LoginPage}"
                   Route="LoginPage"
                   Shell.FlyoutBehavior="Disabled"
                   FlyoutItemIsVisible="False" />
 
+    <ShellContent Title="OutletSelectorView"
+                  Route="OutletSelectorView"
+                  ContentTemplate="{DataTemplate outlet:OutletSelectorView}" />
 
-
-    <!--<ShellContent Title="Dashboard"
-                  Icon="{x:Static icons:AppDrawer.Dashboard}"
-                  ContentTemplate="{DataTemplate dashboard:OwnerDashboardPage}"
-                  Route="OwnerDashboardPage" />-->
-
-    <!--<FlyoutItem Route="OwnerDashboardPage"
-                FlyoutDisplayOptions="AsMultipleItems">
-
-        <ShellContent Title="Inventory"
-                      Icon="{x:Static icons:AppDrawer.Inventory}"
-                      ContentTemplate="{DataTemplate dashboard:OwnerDashboardPage}" />
-
-        <ShellContent Title="Report"
-                      Icon="{x:Static icons:AppDrawer.Report}"
-                      ContentTemplate="{DataTemplate dashboard:OwnerDashboardPage}" />
-
-        <ShellContent Title="Crm"
-                      Icon="{x:Static icons:AppDrawer.Crm}"
-                      ContentTemplate="{DataTemplate dashboard:OwnerDashboardPage}" />
-
-        <ShellContent Title="Settings"
-                      Icon="{x:Static icons:AppDrawer.Setting}"
-                      ContentTemplate="{DataTemplate dashboard:OwnerDashboardPage}" />
-    </FlyoutItem>-->
 
     <Shell.FlyoutFooter>
         <StackLayout Padding="20">

@@ -1,26 +1,23 @@
 ﻿using ZeusBusiness.Abstraction.Infrastructure.Encryption;
 using ZeusBusiness.Abstraction.Services.General;
-using ZeusBusiness.Model.Generics.General;
-using ZeusBusiness.MVVM.Model.Generics.General;
 
-namespace ZeusBusiness.Infrastructure.Tokens
+namespace ZeusBusiness.Infrastructure.Tokens;
+
+public class OutletToken
 {
-    public class OutletToken
+    #region PRIVATE INSTANCE FEILD
+    private ICrypto _crypto = null;
+    private IOutletService _service = null;
+    #endregion
+
+    #region CONSTRUCTOR
+    public OutletToken(ICrypto crypto, IOutletService service)
     {
-        #region PRIVATE INSTANCE FEILD
-        private ICrypto _crypto = null;
-        private IOutletService _service = null;
-        #endregion
-
-        #region CONSTRUCTOR
-        public OutletToken(ICrypto crypto, IOutletService service)
-        {
-            _crypto = crypto;
-            _service = service;
-        }
-        #endregion
-
-        #region PUBLIC METHODS
-        #endregion
+        _crypto = crypto;
+        _service = service;
     }
+    #endregion
+
+    #region PUBLIC METHODS
+    #endregion
 }

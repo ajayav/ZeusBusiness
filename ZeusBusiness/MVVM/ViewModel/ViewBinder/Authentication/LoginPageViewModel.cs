@@ -7,6 +7,8 @@ using ZeusBusiness.CustomControls.Flyout;
 using ZeusBusiness.Infrastructure.PermissionGuard;
 using ZeusBusiness.MVVM.Model.Common;
 using ZeusBusiness.MVVM.Model.Generics.Authentication;
+using ZeusBusiness.MVVM.View.Pages.Authentication;
+using ZeusBusiness.MVVM.View.Pages.Dashboard;
 
 namespace ZeusBusiness.MVVM.ViewModel.ViewBinder.Authentication
 {
@@ -67,11 +69,13 @@ namespace ZeusBusiness.MVVM.ViewModel.ViewBinder.Authentication
                 {
                     await AppShell.Current.DisplayAlert("Invalid User", authResponse.Response, "OK");
                 }
-
-
-
-
             }
+        }
+
+        [RelayCommand]
+        async void ForgotPassword()
+        {
+            await Shell.Current.GoToAsync($"//{nameof(ForgotPasswordPage)}");
         }
         #endregion
     }

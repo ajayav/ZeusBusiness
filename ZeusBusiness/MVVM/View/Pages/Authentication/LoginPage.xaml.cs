@@ -9,4 +9,9 @@ public partial class LoginPage : ContentPage
 		InitializeComponent();
 		this.BindingContext = vm;
 	}
+
+	private void Forgot_Tapped(object sender, EventArgs e)
+	{
+
+	}
 }
