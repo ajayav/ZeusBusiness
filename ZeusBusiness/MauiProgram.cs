@@ -45,14 +45,14 @@ public static class MauiProgram
 		builder.Services.AddSingleton<LoginPage>();
 		builder.Services.AddSingleton<OwnerDashboardPage>();
 		builder.Services.AddSingleton<LoadingPage>();
-		builder.Services.AddSingleton<InventoryPage>();
+		builder.Services.AddTransient<InventoryPage>();
 		builder.Services.AddSingleton<ReportPage>();
 		builder.Services.AddSingleton<CrmPage>();
 		builder.Services.AddSingleton<SettingsPage>();
 		builder.Services.AddSingleton<UserDashboardPage>();
 		builder.Services.AddTransient<OutletSelectorView>();
 
-		//View-Models
+		//View-Models			
 		builder.Services.AddSingleton<LoginPageViewModel>();
 		builder.Services.AddSingleton<OwnerDashboardViewModel>();
 		builder.Services.AddSingleton<AppShellViewModel>();
