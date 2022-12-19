@@ -1,4 +1,5 @@
-﻿using ZeusBusiness.Abstraction.Services.General;
+﻿using System.Collections.ObjectModel;
+using ZeusBusiness.Abstraction.Services.General;
 using ZeusBusiness.MVVM.Model.Generics.General;
 using ZeusBusiness.MVVM.ViewModel.ViewBinder;
 
@@ -9,7 +10,7 @@ public partial class OutletSelectorViewModel : BaseViewModel
     private IOutletService _service;
 
 
-    public List<OutletUser> OutletUser { get; set; } = new List<OutletUser>();
+    public ObservableCollection<OutletUser> OutletUser { get; set; } = new ObservableCollection<OutletUser>();
     public OutletSelectorViewModel(IOutletService service)
     {
         _service = service;
@@ -26,8 +27,6 @@ public partial class OutletSelectorViewModel : BaseViewModel
         GetOutletsByUserId();
 
     }       
-
-
 
     private async Task GetOutletsByUserId()
     {

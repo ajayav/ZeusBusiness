@@ -18,10 +18,11 @@
                            HeightRequest="100"
                            HorizontalOptions="Center"
                            VerticalOptions="CenterAndExpand">
-                        <Label Text="{Binding Outlet.Name}"/>
+                        <Label Text="{Binding Outlet.Name}" />
+                        <!--<Label Text="{Binding Outlet.Location}" />-->
                     </Frame>
                 </StackLayout>
             </DataTemplate>
         </CollectionView.ItemTemplate>
     </CollectionView>
-</ContentPage>
+</ContentPage>      
