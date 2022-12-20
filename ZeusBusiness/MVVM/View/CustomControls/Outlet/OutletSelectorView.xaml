@@ -10,18 +10,15 @@
                     ItemsSource="{Binding OutletUser}">
         <CollectionView.ItemTemplate>
             <DataTemplate x:DataType="models:OutletUser">
-                <StackLayout>
-                    <Frame Margin="20"
-                           BorderColor="DarkBlue"
-                           CornerRadius="5"
-                           HasShadow="True"
-                           HeightRequest="100"
-                           HorizontalOptions="Center"
-                           VerticalOptions="CenterAndExpand">
-                        <Label Text="{Binding Outlet.Name}" />
-                        <Label Text="{Binding Outlet.Location}" />
-                    </Frame>
-                </StackLayout>
+                <StackLayout Margin="20"
+                            HeightRequest="100"
+                            HorizontalOptions="Center"
+                            VerticalOptions="CenterAndExpand">
+                    <Label Text="{Binding Outlet.Name}" />
+                    <Label Text="{Binding Outlet.Location}" />
+
+                    </StackLayout>
+
             </DataTemplate>
         </CollectionView.ItemTemplate>
     </CollectionView>
